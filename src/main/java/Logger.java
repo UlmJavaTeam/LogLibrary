@@ -54,7 +54,9 @@ public class Logger {
         if (logLevel.getLevelValue() < this.logLevel.getLevelValue()) {
             return;
         }
-        fileWriter.write(text);
+        try {
+            fileWriter.write(text);
+        } catch (IOException excp) {}
     }
 
     /**
